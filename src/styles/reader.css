@@ -1,0 +1,80 @@
+/* SCP Tracker Immersive Reader - Base Styles */
+/* Variables are set by the reader module via CSS custom properties on :root */
+
+:root {
+  --reader-font-size: 100%;
+  --reader-line-height: 1.6;
+  --reader-max-width: 800px;
+  --reader-bg-color: #fafafa;
+  --reader-text-color: #111111;
+  --reader-link-color: #0a66c2;
+  --reader-muted-color: #666666;
+}
+
+/* Apply only when reader is enabled */
+html[data-reader="on"] {
+  background: var(--reader-bg-color);
+  color: var(--reader-text-color);
+}
+
+html[data-reader="on"] body {
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  font-size: var(--reader-font-size);
+  line-height: var(--reader-line-height);
+}
+
+/* Wikidot main content wrapper commonly uses #page-content; keep selectors permissive */
+html[data-reader="on"] #page-content,
+html[data-reader="on"] main,
+html[data-reader="on"] article,
+html[data-reader="on"] .content,
+html[data-reader="on"] #content {
+  max-width: var(--reader-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+html[data-reader="on"] p,
+html[data-reader="on"] li {
+  max-width: var(--reader-max-width);
+}
+
+html[data-reader="on"] a { color: var(--reader-link-color); }
+html[data-reader="on"] a:visited { opacity: 0.9; }
+
+/* Images and media scale to container */
+html[data-reader="on"] img,
+html[data-reader="on"] video,
+html[data-reader="on"] iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tables: make horizontally scrollable instead of overflowing */
+html[data-reader="on"] table {
+  width: 100%;
+  border-collapse: collapse;
+}
+html[data-reader="on"] table { display: block; overflow-x: auto; }
+
+/* Headings rhythm */
+html[data-reader="on"] h1,
+html[data-reader="on"] h2,
+html[data-reader="on"] h3,
+html[data-reader="on"] h4,
+html[data-reader="on"] h5,
+html[data-reader="on"] h6 {
+  line-height: 1.25;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+/* Muted text */
+html[data-reader="on"] .muted,
+html[data-reader="on"] .caption,
+html[data-reader="on"] figcaption {
+  color: var(--reader-muted-color);
+}

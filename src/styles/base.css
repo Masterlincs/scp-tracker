@@ -1,0 +1,214 @@
+/* SCP Foundation - Base Styles */
+:root {
+  --scp-bg: #111;
+  --scp-surface: #1a1a1a;
+  --scp-surface-2: #2a2a2a;
+  --scp-text: #e6e6e6;
+  --scp-muted: #888;
+  --scp-accent: #ff3b30;
+  --scp-accent-2: #ff6b35;
+  --scp-border: #333;
+  --scp-radius: 8px;
+  --scp-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--scp-bg);
+  color: var(--scp-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--scp-accent);
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+/* Components */
+.card {
+  background: var(--scp-surface);
+  border: 1px solid var(--scp-border);
+  border-radius: var(--scp-radius);
+  box-shadow: var(--scp-shadow);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #444;
+  color: var(--scp-text);
+  font-size: 0.75rem;
+}
+
+.btn {
+  background-color: #333;
+  color: var(--scp-text);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #444;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background-color: var(--scp-accent);
+  color: #0b0e14;
+}
+
+.btn.primary:hover {
+  filter: brightness(1.05);
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Dictionary Tooltip */
+.scp-term {
+  text-decoration: underline dotted var(--scp-accent);
+  cursor: help;
+}
+
+.scp-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 10001;
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scp-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.95);
+}
+
+/* Cross-Linking Navigator */
+.scp-navigator {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  width: 320px;
+  max-height: 450px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 18px;
+  border-radius: 12px;
+  z-index: 9999;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scp-navigator h3 {
+  margin-top: 0;
+  color: var(--scp-accent);
+  border-bottom: 2px solid #444;
+  padding-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.scp-reference {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.scp-reference:hover {
+  background: var(--scp-surface-2);
+  transform: translateX(-2px);
+}
+
+.scp-reference.read {
+  opacity: 0.6;
+}
+
+.scp-reference .status {
+  font-size: 0.8em;
+  color: #888;
+  margin-left: 10px;
+}
+
+/* Scrollbar Styling */
+.scp-navigator::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scp-navigator::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.scp-navigator::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.scp-navigator::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Print Styles */
+@media print {
+  .scp-navigator,
+  #scp-manual-read-button,
+  #scp-progress-bar,
+  #scp-reading-time {
+    display: none !important;
+  }
+  
+  #page-content {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Dependency check
+        run: npm run depcheck:ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test:ci
+
+      - name: Build Chrome (MV3)
+        run: npm run build:chrome
+
+      - name: Upload Chrome build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-chrome
+          path: dist-chrome/
+
+      - name: Build Firefox (MV3)
+        run: npm run build:firefox
+
+      - name: Upload Firefox MV3 build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-firefox
+          path: dist-firefox/
+
+      - name: Build Firefox (MV2)
+        run: npm run build:firefox:mv2
+
+      - name: Upload Firefox MV2 build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-firefox-mv2
+          path: dist-firefox-mv2/

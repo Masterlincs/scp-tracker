@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCP Tracker</title>
+  <link rel="icon" href="../icons/icon32.png" sizes="32x32">
+  <link rel="stylesheet" href="../styles/popup.css">
+</head>
+<body>
+  <div class="container">
+      <img aria-hidden="true" src="../icons/icon48.png" alt="" />
+    <h1>SCP Tracker</h1>
+    <div class="stats">
+      <p>You've read <span id="readCount">0</span> SCPs/Tales</p>
+    </div>
+    
+    <div class="controls">
+      <button type="button" id="markUnread">Mark Current as Unread</button>
+      <button type="button" id="clearAll">Clear All</button>
+      <button type="button" id="exportBtn">Export Data</button>
+      <button type="button" id="refreshBtn">Refresh</button>
+      <button type="button" id="themeToggle" aria-pressed="false">Toggle Theme</button>
+      <button type="button" id="openSettings">Settings</button>
+    </div>
+    
+    <div class="reading-controls">
+      <h3>Reading Preferences</h3>
+      <div class="control-group">
+        <label>
+          <input type="checkbox" id="dictionaryEnabled" checked> Terminology Dictionary
+        </label>
+      </div>
+      
+      <div class="control-group">
+        <label>
+          <input type="checkbox" id="navigatorEnabled" checked> Cross-Linking Navigator
+        </label>
+      </div>
+    </div>
+    
+    <div class="filters">
+      <label>
+        <input type="checkbox" id="showSCPs" checked> SCPs
+      </label>
+      <label>
+        <input type="checkbox" id="showTales" checked> Tales
+      </label>
+    </div>
+    
+    <div class="sorting">
+      <label>Sort by:
+        <select id="sortBy">
+          <option value="number">SCP Number</option>
+          <option value="date">Date Read</option>
+          <option value="title">Title</option>
+        </select>
+      </label>
+      <label>
+        <input type="checkbox" id="sortAsc"> Ascending
+      </label>
+    </div>
+    
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search SCPs/Tales...">
+    </div>
+    
+
+    <div id="analyticsSection" class="analytics">
+      <h3>Analytics</h3>
+      <div id="lastReadStat" style="margin-bottom:6px;"></div>
+      <div id="typeSplitStats" style="margin:8px 0;"></div>
+      <div>
+        <strong>Top tags</strong>
+        <ul id="tagStatsList" class="tag-list" style="list-style:none; padding-left:0; margin-top:6px;"></ul>
+      </div>
+    </div>
+    
+    <div class="scp-list">
+      <ul id="scpList"></ul>
+    </div>
+    
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    
+    <div class="mini-footer" role="contentinfo" aria-label="Support links">
+      <a class="kofi-badge" href="https://ko-fi.com/masterlincs" target="_blank" rel="noopener noreferrer" aria-label="Support on Ko‑fi">Ko‑fi</a>
+      <span aria-hidden="true">•</span>
+      <a href="https://github.com/Masterlincs/scp-tracker" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repository">GitHub</a>
+      <span aria-hidden="true">•</span>
+      <a href="https://masterlincs.dev" target="_blank" rel="noopener noreferrer" aria-label="Open project website">Website</a>
+      <span aria-hidden="true">•</span>
+      <span>Trademark Notice: The SCP insignia is a trademark of its respective owners. Use of the logo does not imply endorsement by the SCP Foundation or the SCP Wiki.</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

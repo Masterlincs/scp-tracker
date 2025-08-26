@@ -1,0 +1,33 @@
+/* Base content-script CSS (intentionally minimal).
+   Add site-specific overrides here if needed. */
+
+/* Dictionary highlight + tooltip (loaded with content script) */
+.scp-term {
+  text-decoration: underline dotted #ff3b30; /* matches accent */
+  cursor: help;
+}
+
+.scp-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 10001;
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scp-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.95);
+}

@@ -1,0 +1,7 @@
+/* Immersive Reader Theme: Sepia */
+:root[data-reader-theme="sepia"] {
+  --reader-bg-color: #f4ecd8;
+  --reader-text-color: #3b2f2f;
+  --reader-link-color: #8b5e34;
+  --reader-muted-color: #7a6a5a;
+}

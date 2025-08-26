@@ -1,0 +1,7 @@
+/* Immersive Reader Theme: Dark */
+:root[data-reader-theme="dark"] {
+  --reader-bg-color: #0f1115;
+  --reader-text-color: #e6e6e6;
+  --reader-link-color: #4da3ff;
+  --reader-muted-color: #a0a0a0;
+}

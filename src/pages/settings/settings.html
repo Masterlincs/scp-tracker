@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP Tracker - Settings</title>
+    <link rel="icon" href="../../icons/icon32.png" sizes="32x32">
+    <link rel="stylesheet" href="../../styles/settings.css">
+</head>
+<body>
+    <div class="settings-container">
+        <header class="settings-header">
+            <h1>SCP Tracker Settings</h1>
+            <p>Configure your reading experience</p>
+        </header>
+
+        <main class="settings-content">
+            <section class="settings-section" id="readingPreferences">
+                <h2>Reading Preferences</h2>
+                
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="readerEnabled">
+                        <span class="checkmark"></span>
+                        Enable Immersive Reader
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label for="readerTheme">Reader Theme</label>
+                    <select id="readerTheme">
+                        <option value="default">Default</option>
+                        <option value="dark">Dark</option>
+                        <option value="sepia">Sepia</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="readerFontSize">Font Size (%) <span>(80 - 200)</span></label>
+                    <input type="number" id="readerFontSize" min="80" max="200" step="5" placeholder="100">
+                </div>
+
+                <div class="setting-group">
+                    <label for="readerLineHeight">Line Height <span>(e.g., 1.6)</span></label>
+                    <input type="number" id="readerLineHeight" min="1" max="3" step="0.1" placeholder="1.6">
+                </div>
+
+                <div class="setting-group">
+                    <label for="readerMaxWidth">Max Width (px) <span>(600 - 1200)</span></label>
+                    <input type="number" id="readerMaxWidth" min="600" max="1200" step="20" placeholder="800">
+                </div>
+
+                <div class="setting-group">
+                    <label for="readerCustomCSS">Custom CSS</label>
+                    <textarea id="readerCustomCSS" rows="3" placeholder="/* Optional additional CSS for the reader */"></textarea>
+                </div>
+
+                <div class="setting-group">
+                    <button id="resetReaderDefaults" class="btn secondary">Reset Reader Defaults</button>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h2>Extension Features</h2>
+                
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="dictionaryEnabled" checked>
+                        <span class="checkmark"></span>
+                        Dictionary Tooltips
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="navigatorEnabled" checked>
+                        <span class="checkmark"></span>
+                        Cross-linking Navigator
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="accessibilityEnabled" checked>
+                        <span class="checkmark"></span>
+                        Accessibility Enhancements
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="linkPreviewsEnabled" checked>
+                        <span class="checkmark"></span>
+                        SCP Link Previews
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showProgress" checked>
+                        <span class="checkmark"></span>
+                        Show Reading Progress Indicator
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showReadingTime" checked>
+                        <span class="checkmark"></span>
+                        Show Estimated Reading Time
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label for="scrollThreshold">Scroll Threshold <span>(0.1 – 1.0)</span></label>
+                    <input type="number" id="scrollThreshold" min="0.1" max="1.0" step="0.05" placeholder="0.8">
+                </div>
+            </section>
+
+            <section class="settings-section" id="dataManagement">
+                <h2>Reading Data</h2>
+                <div class="setting-group">
+                    <button id="exportData" class="btn secondary">Export Reading Data</button>
+                    <button id="clearData" class="btn danger">Clear Reading Data</button>
+                </div>
+            </section>
+
+            <section class="settings-section" id="aboutSupport">
+                <h2>About &amp; Support</h2>
+
+                <div class="setting-group">
+                    <a class="btn kofi-button" href="https://ko-fi.com/masterlincs" target="_blank" rel="noopener noreferrer" title="Buy me a coffee on Ko‑fi">Support on Ko‑fi</a>
+                </div>
+
+                <div class="about-links" role="navigation" aria-label="Project links">
+                    <a href="https://github.com/Masterlincs/scp-tracker" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <span aria-hidden="true">•</span>
+                    <a href="https://masterlincs.dev" target="_blank" rel="noopener noreferrer">Website</a>
+                    <span aria-hidden="true">•</span>
+                    <a href="https://github.com/Masterlincs/scp-tracker#readme" target="_blank" rel="noopener noreferrer">Docs</a>
+                </div>
+
+                <p class="about-meta">
+                    <span>Version: <span id="extVersion">—</span></span>
+                    <span aria-hidden="true">•</span>
+                    <span>License: MIT</span>
+                    <span aria-hidden="true">•</span>
+                    <span>Assets: CC BY-SA 3.0</span>
+                    <span aria-hidden="true">•</span>
+                    <span>Trademark Notice: The SCP insignia is a trademark of its respective owners. Use of the logo does not imply endorsement by the SCP Foundation or the SCP Wiki.</span>
+                </p>
+            </section>
+        </main>
+
+        <footer class="settings-footer">
+            <button id="saveSettings" class="btn primary">Save Settings</button>
+            <button id="closeSettings" class="btn secondary">Close</button>
+        </footer>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

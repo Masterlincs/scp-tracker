@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# build outputs
+dist/
+dist-chrome/
+dist-firefox/
+dist-firefox-mv2/
+
+# test artifacts
+coverage/
+junit.xml
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+*.swp
