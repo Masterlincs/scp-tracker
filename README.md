@@ -60,6 +60,20 @@ npm test
 - Firefox 78+
 - Edge 88+
 
+
+### Privacy Policy
+
+SCP Tracker helps you track which SCP Wiki articles and tales you’ve read and optionally provides reader and accessibility enhancements. It runs only on official SCP Wiki domains and stores data in your browser.
+
+- Data collected: None. Your reading history and settings are stored locally and/or in your browser’s sync storage. No data is sent to external servers we control.
+- Permissions and purposes:
+  - storage — save your reading history and preferences (local/sync).
+  - tabs — read the current tab’s URL/context to update read status and show relevant UI.
+  - alarms — small, periodic maintenance (e.g., cache refresh) to keep data accurate.
+  - host permissions (SCP Wiki domains) — enable page detection, tooltips, and Reader Mode only on SCP Wiki sites.
+
+Contact: open an issue on this repository (see “Issues” tab) or refer to the contact fields in [package.json](package.json) (repository, bugs, homepage).
+
 ### License
 
 - Code: MIT License – see [LICENSE](LICENSE).
